@@ -1,7 +1,7 @@
 
 const express = require('express') //express 모듈을 사용하겠다는 뜻
 const app = express() //새로운 express 앱을 만들겠다.
-const port = 3000
+const port = 5000
 const cookieParser = require("cookie-parser")
 const bodyParser = require("body-parser")
 
@@ -28,8 +28,13 @@ app.get('/', (req, res) => {
     res.send('Hello World! 안녕하세영~요오오옹') //root 디렉토리에서 다음 데이터를 출력하겠다.
 })
 
+// client에 보냄
+app.get('/api/hello', (req,res) => {
+    res.send("안녕하세요 ~")
+})
+
 //회원가입 라우터 제작
-app.post('/register', (req,res) => {
+app.post('/api/users/register', (req,res) => {
     //회원가입 시 필요한 정보들을 client에서 가져오면 그것들을 데이터베이스에 저장
     const user = new User(req.body)
 
