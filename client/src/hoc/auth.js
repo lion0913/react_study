@@ -5,6 +5,7 @@ import {auth} from '../_actions/user_action';
 
 export default function (SpecificComponent, option, adminRoute = null) {
     //option : [null(아무나 출입가능), true(로그인한 유저만), false(로그인한 유저는 출입X)]
+    //adminRoute : 관리자만 출입가능한 컴포넌트를 위한 설정
 
     //백엔드에 request를 보내서 상태를 받아온다(보내는 부분)
     function AuthenticationCheck(props) {
